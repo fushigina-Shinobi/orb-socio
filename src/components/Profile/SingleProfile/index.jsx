@@ -22,15 +22,20 @@ export default function SingleProfile({ profile, publications, handle }) {
   return (
     <div className='flex flex-auto flex-col bg-mainBg'>
       <Head>
+        <link rel='preconnect' href={canonicalURL} />
         <meta property='og:image' content={imageURL} />
         <meta property='og:image:secure_url' content={imageURL} />
         <meta property='og:image:secure' content={imageURL} />
+        <meta property='og:url' content={imageURL} />
+        <meta property='og:url' content={canonicalURL} />
         <meta property='og:image:width' content='1200' />
         <meta property='og:image:height' content='630' />
         <meta property='og:image' content={imageURL} />
         <meta property='og:type' content='profile' />
+        <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:image' content={imageURL} />
-        <meta name='twitter:card' content={imageURL} />
+        <meta name='twitter:url' content={canonicalURL} />
+        <meta name='twitter:url' content={imageURL} />
         <link rel='canonical' href={canonicalURL} />
       </Head>
       <>

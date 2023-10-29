@@ -62,6 +62,7 @@ export default function MyDocument() {
   return (
     <Html lang='en'>
       <Head />
+      <link rel='preconnect' href={`${process.env.NEXT_PUBLIC_BASE_URL}`} />
       <body>
         <Main />
         <NextScript />
