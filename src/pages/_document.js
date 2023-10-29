@@ -61,6 +61,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 export default function MyDocument() {
   return (
     <Html lang='en'>
+      <title>Lens Protocol</title>
       <Head />
       <link rel='preconnect' href={`${process.env.NEXT_PUBLIC_BASE_URL}`} />
       <body>

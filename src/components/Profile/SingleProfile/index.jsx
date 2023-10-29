@@ -23,17 +23,40 @@ export default function SingleProfile({ profile, publications, handle }) {
     <div className='flex flex-auto flex-col bg-mainBg'>
       <Head>
         <link rel='preconnect' href={canonicalURL} />
-        <meta property='og:image' content={imageURL} />
+        <title>Lens Protocol</title>
+        <meta name='description' content='Web-3 Social Layer Solution' />
+        {/*Facebook meta tags */}
+        <meta property='og:title' content='Lens Protocol' />
+        <meta property='og:description' content='Web-3 Social Layer Solution' />
+        <meta property='og:type' content='website' />
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='630' />
         <meta property='og:image:secure_url' content={imageURL} />
         <meta property='og:image:secure' content={imageURL} />
         <meta property='og:url' content={canonicalURL} />
-        <meta property='og:image:width' content='1200' />
-        <meta property='og:image:height' content='630' />
         <meta property='og:image' content={imageURL} />
-        <meta property='og:type' content='profile' />
+        <meta
+          property='og:site_name'
+          content={process.env.NEXT_PUBLIC_BASE_URL}
+        />
+        {/*Twitter meta tags */}
+        <meta
+          property='twitter:domain'
+          content={process.env.NEXT_PUBLIC_BASE_URL}
+        />
+        <meta name='twitter:title' content='Lens Protocol' />
+        <meta
+          name='twitter:description'
+          content='Web-3 Social Layer Solution'
+        />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:image' content={imageURL} />
         <meta name='twitter:url' content={canonicalURL} />
+        <meta name='twitter:creator' content='@youngminds2014' />
+        <meta
+          name='twitter:site_name'
+          content={process.env.NEXT_PUBLIC_BASE_URL}
+        />
         <link rel='canonical' href={canonicalURL} />
       </Head>
       <>
