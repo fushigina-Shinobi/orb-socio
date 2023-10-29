@@ -17,7 +17,7 @@ export default function SingleProfile({ profile, publications, handle }) {
     '&bio=' +
     encodeURIComponent(profile?.bio);
 
-  const canonicalURL = `${process.env.NEXT_PUBLIC_BASE_URL}/profiles/${handle}`;
+  const canonicalURL = `${process.env.NEXT_PUBLIC_BASE_URL}/profile/${handle}`;
 
   return (
     <div className='flex flex-auto flex-col bg-mainBg'>
