@@ -19,6 +19,8 @@ export default function SingleProfile({ profile, publications, handle }) {
 
   const canonicalURL = `${process.env.NEXT_PUBLIC_BASE_URL}/profile/${handle}`;
 
+  console.log('profile', profile?.coverPicture?.original?.url);
+
   return (
     <div className='flex flex-auto flex-col bg-mainBg'>
       <Head>

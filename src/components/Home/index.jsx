@@ -1,21 +1,22 @@
 import Link from 'next/link';
 import HeroAnimation from '../Common/HeroAnimation';
 import Head from 'next/head';
+import { useState } from 'react';
 
 export default function Home() {
   const imageURL =
     process.env.NEXT_PUBLIC_BASE_URL +
     '/api/og/main?' +
     'title=' +
-    encodeURIComponent('Lens Protocol');
-  +'&description=' +
+    encodeURIComponent('Lens Protocol') +
+    '&description=' +
     encodeURIComponent(
       'Empowering individuals while fostering transparency through blockchain technology'
     );
+  const [loading, setLoading] = useState(false);
   return (
     <HeroAnimation>
       <Head key={'main'}>
-        <meta property='og:title' content='hello' title='hi' />
         <meta property='og:image' content={imageURL} />
         <meta property='og:image:secure_url' content={imageURL} />
         <meta property='og:image:secure' content={imageURL} />
@@ -41,25 +42,36 @@ export default function Home() {
                     blockchain technology."
                   </p>
                   <div className='relative flex flex-col sm:flex-row sm:space-x-4'>
-                    <Link
-                      href={'/profile'}
-                      className='flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-primary opacity-90 rounded-md sm:mb-0 hover:opacity-80 sm:w-auto'
-                    >
-                      Check Profile
-                      <svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        className='w-5 h-5 ml-1'
-                        viewBox='0 0 24 24'
-                        fill='none'
-                        stroke='currentColor'
-                        stroke-width='2'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
+                    {loading ? (
+                      <div className='bg-opacity-40 cursor-not-allowed w-full sm:w-44 h-[3.25rem] flex justify-center items-center px-6 py-3 mb-3 text-lg text-white bg-primary rounded-md sm:mb-0'>
+                        <div
+                          className='w-5 h-5 mr-4 rounded-full animate-spin
+                    border-4 border-solid border-t-transparent'
+                        ></div>
+                      </div>
+                    ) : (
+                      <Link
+                        href={'/profile'}
+                        onClick={() => setLoading(true)}
+                        className='flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-primary opacity-90 rounded-md sm:mb-0 hover:opacity-80 sm:w-auto'
                       >
-                        <line x1='5' y1='12' x2='19' y2='12'></line>
-                        <polyline points='12 5 19 12 12 19'></polyline>
-                      </svg>
-                    </Link>
+                        Check Profile
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          className='w-5 h-5 ml-1'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          stroke-width='2'
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                        >
+                          <line x1='5' y1='12' x2='19' y2='12'></line>
+                          <polyline points='12 5 19 12 12 19'></polyline>
+                        </svg>
+                      </Link>
+                    )}
+
                     <a className='flex cursor-not-allowed items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600'>
                       Learn More
                     </a>

@@ -31,7 +31,7 @@ export async function getServerSideProps({ params }) {
       query: getPublications,
       variables: {
         id: profile.id,
-        limit: 50,
+        limit: 20,
       },
     });
 

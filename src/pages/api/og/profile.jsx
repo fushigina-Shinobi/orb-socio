@@ -20,7 +20,7 @@ export default function handler(req) {
     //   )}&w=1200&q=75`;
 
     // const avatarUrl =
-    //   cover &&
+    //   avatar &&
     //   `${protocol}//${host}/_next/image?url=${encodeURIComponent(
     //     avatar
     //   )}&w=1200&q=75`;
@@ -42,39 +42,39 @@ export default function handler(req) {
               Image Not Found
             </div>
           )}
-          <div tw='mx-20 flex bg-white' style={{ columnGap: '40px' }}>
+          <div tw='mx-4 flex bg-white' style={{ columnGap: '10px' }}>
             {avatar ? (
               <img
                 src={avatar}
                 alt={handle}
-                tw='-mt-28 h-60 w-60 rounded-full border-2'
+                tw='-mt-10 h-20 w-20 rounded-full border-2'
                 width='1200'
                 height='75'
                 style={{ objectFit: 'cover', objectPosition: 'center' }}
               />
             ) : (
               <div
-                tw='-mt-24 h-36 w-36 rounded-full border-2 relative'
+                tw='-mt-10 h-16 w-16 rounded-full border-2 relative'
                 style={{ backgroundColor: '#884F5D' }}
               >
-                <h3 tw='text-tertiary absolute top-11 left-14 text-5xl'>
+                <h3 tw='text-tertiary absolute top-11 left-14 text-3xl'>
                   {getInitialName(handle)}
                 </h3>
               </div>
             )}
 
-            <div tw='flex flex-col' style={{ rowGap: '8px' }}>
-              <p tw='text-4xl' style={{ color: '#8EC3B0' }}>
-                @{handle}
+            <div tw='flex-auto h-28 -mt-4 flex flex-col'>
+              <p tw='text-xl' style={{ color: '#8EC3B0' }}>
+                @{handle?.length > 30 ? handle.slice(0, 30) + '...' : handle}
               </p>
-              <p tw='text-2xl -mt-4' style={{ color: '#884F5D' }}>
-                {bio}
+              <p tw='text-sm -mt-2' style={{ color: '#884F5D' }}>
+                {bio?.length > 145 ? bio.slice(0, 145) + '...' : bio}
               </p>
             </div>
           </div>
         </div>
       ),
-      { width: 1200, height: 630 }
+      { width: 526, height: 275 }
     );
   } catch (error) {
     console.log(`${error.message}`);

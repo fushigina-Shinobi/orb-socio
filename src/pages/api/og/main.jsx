@@ -1,4 +1,4 @@
-import getInitialName from '@/utils/getInitialName';
+// import getInitialName from '@/utils/getInitialName';
 import { ImageResponse } from '@vercel/og';
 
 export const config = {
