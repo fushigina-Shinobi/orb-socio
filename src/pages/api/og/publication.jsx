@@ -44,7 +44,7 @@ export default function handler(req) {
           </div>
         </div>
       ),
-      { width: 1200, height: 628 }
+      { width: 1200, height: 630 }
     );
   } catch (error) {
     console.log(`${error.message}`);

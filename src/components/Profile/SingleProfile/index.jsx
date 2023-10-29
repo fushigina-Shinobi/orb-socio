@@ -114,7 +114,9 @@ export default function SingleProfile({ profile, publications, handle }) {
               className='w-full'
               // className='bg-white px-6 py-10 rounded-lg shadow-lg'
             >
-              {profile && <Publications publications={publications} />}
+              {profile && (
+                <Publications publications={publications} profile={profile} />
+              )}
             </div>
           </div>
         </div>
@@ -124,7 +126,7 @@ export default function SingleProfile({ profile, publications, handle }) {
   );
 }
 
-function Publications({ publications }) {
+function Publications({ publications, profile }) {
   // if (loading) {
   //   return <p className='p-14 flex justify-center items-center'>Loading...</p>;
   // } else if (publications?.length === 0) {
@@ -152,7 +154,7 @@ function Publications({ publications }) {
                     <img
                       width='400'
                       height='400'
-                      alt={profile.handle}
+                      alt={profile?.handle}
                       className='rounded-xl mt-6 mb-2'
                       src={pub.metadata.media?.[0].original.url}
                     />
