@@ -79,7 +79,7 @@ export default function SinglePublication() {
       <p className='text-primary py-10 text-center text-xl sm:text-2xl md:text-xl lg:text-2xl xl:text-3xl'>
         Publication
       </p>
-      <div className='lg:px-20 w-full overflow-x-auto pt-4'>
+      <div className='lg:px-20 w-full pt-4'>
         <section className='text-gray-700 body-font border-t border-gray-200'>
           <div className='container px-5 pt-10 mx-auto'>
             <div className='flex flex-wrap -m-2'>

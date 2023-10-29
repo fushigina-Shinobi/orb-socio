@@ -1,14 +1,17 @@
 import SingleProfile from '@/components/Profile/SingleProfile';
 import { client, getPublications, getProfile } from '../api';
+import { Suspense } from 'react';
 
 export default function EachProfile({ profile, publications, handle }) {
   return (
     <>
-      <SingleProfile
-        profile={profile}
-        publications={publications}
-        handle={handle}
-      />
+      <Suspense fallback={<p>Loading...</p>}>
+        <SingleProfile
+          profile={profile}
+          publications={publications}
+          handle={handle}
+        />
+      </Suspense>
     </>
   );
 }

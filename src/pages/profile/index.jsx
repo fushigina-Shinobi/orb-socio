@@ -1,13 +1,13 @@
 import Profile from '@/components/Profile';
 import { client, exploreProfiles } from '../api';
+import { Suspense } from 'react';
 
-export default function Profilepage({ data, loading }) {
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+export default function Profilepage({ data }) {
   return (
     <>
-      <Profile profiles={data} />
+      <Suspense fallback={<p>Loading...</p>}>
+        <Profile profiles={data} />
+      </Suspense>
     </>
   );
 }
@@ -25,14 +25,12 @@ export async function getServerSideProps() {
     return {
       props: {
         data,
-        loading: false,
       },
     };
   } catch (error) {
     return {
       props: {
         data: null,
-        loading: false,
       },
     };
   }

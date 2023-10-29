@@ -23,11 +23,15 @@ export default function SingleProfile({ profile, publications, handle }) {
     <div className='flex flex-auto flex-col bg-mainBg'>
       <Head>
         <meta property='og:image' content={imageURL} />
-        <meta property='og:image:secure_url' content={imageURL} />
-        <meta property='og:image:secure' content={imageURL} />
+        {/* <meta property='og:image:secure_url' content={imageURL} />
+        <meta property='og:image:secure' content={imageURL} /> */}
         <meta property='og:image:width' content='1200' />
         <meta property='og:image:height' content='630' />
+        <meta property='og:image' content={imageURL} />
+        <meta property='og:image:width' content='526' />
+        <meta property='og:image:height' content='275' />
         <meta name='twitter:image' content={imageURL} />
+        <meta name='twitter:card' content={imageURL} />
         <link rel='canonical' href={canonicalURL} />
       </Head>
       <>
