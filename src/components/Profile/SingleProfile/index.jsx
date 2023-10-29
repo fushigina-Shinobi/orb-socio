@@ -17,26 +17,19 @@ export default function SingleProfile({ profile, publications, handle }) {
     '&bio=' +
     encodeURIComponent(profile?.bio);
 
-  // Only set meta tags when profile data is available
-  const metaTags = profile ? (
-    <>
-      <meta property='og:image' content={imageURL} />
-      <meta property='og:image:secure_url' content={imageURL} />
-      <meta property='og:image:secure' content={imageURL} />
-      <meta property='og:image:width' content='400' />
-      <meta property='og:image:height' content='300' />
-      <meta name='twitter:image' content={imageURL} />
-    </>
-  ) : null;
+  const canonicalURL = `${process.env.NEXT_PUBLIC_BASE_URL}/profiles/${handle}`;
 
   return (
     <div className='flex flex-auto flex-col bg-mainBg'>
-      <Head>{metaTags}</Head>
-      {/* {loading ? (
-        <p className='p-14 flex flex-auto justify-center items-center'>
-          Loading ...
-        </p>
-      ) : ( */}
+      <Head>
+        <meta property='og:image' content={imageURL} />
+        <meta property='og:image:secure_url' content={imageURL} />
+        <meta property='og:image:secure' content={imageURL} />
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='630' />
+        <meta name='twitter:image' content={imageURL} />
+        <link rel='canonical' href={canonicalURL} />
+      </Head>
       <>
         <div
           className={`h-64 w-full bg-cover bg-center bg-tertiary ${
