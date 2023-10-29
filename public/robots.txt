@@ -1,0 +1,6 @@
+User-agent: *
+
+Allow: /api/og/profile/*
+Allow: /api/og/publication/*
+Allow: /api//og/profile/
+Allow: /api/og/*

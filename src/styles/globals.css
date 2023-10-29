@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+/** Media Queries */
+
+/* Less than 1920 */
+@media screen and (max-width: 1920px) {
+  html,
+  * {
+    font-size: 20px;
+  }
+}
+
+/* less than or equal to 1536 */
+@media screen and (max-width: 1536px) {
+  html,
+  * {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1366) {
+  html,
+  * {
+    font-size: 16px;
+  }
+}
+
+/* Less than 1280 */
+@media screen and (max-width: 1280px) {
+  html,
+  * {
+    font-size: 14px;
+  }
+}
+
+/* Less than 1024 */
+@media screen and (max-width: 1024px) {
+  html,
+  * {
+    font-size: 12px;
+  }
+}
+
+/* Less than 768 */
+@media screen and (max-width: 768px) {
+  html,
+  * {
+    font-size: 10px;
+  }
+}
+
+/* Less than 640 */
+@media screen and (max-width: 640px) {
+  html,
+  * {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html,
+  * {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  html,
+  * {
+    font-size: 6px;
+  }
+}
+
+/* More than 1921 */
+@media screen and (min-width: 1921px) {
+  html,
+  * {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-height: 760px) {
+  html,
+  * {
+    font-size: 18px;
+  }
+}
+@media screen and (max-height: 700px) {
+  html,
+  * {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-height: 660px) {
+  html,
+  * {
+    font-size: 14px;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
