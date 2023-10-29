@@ -57,6 +57,17 @@ export default function SingleProfile({ profile, publications, handle }) {
           name='twitter:site_name'
           content={process.env.NEXT_PUBLIC_BASE_URL}
         />
+
+        {/*Whatsapp meta tags */}
+        <meta property='og:title' content='Lens Protocol' />
+        <meta property='og:description' content='Web-3 Social Layer Solution' />
+        <meta property='og:type' content='website' />
+        <meta property='og:image:width' content='300' />
+        <meta property='og:image:height' content='300' />
+        <meta property='og:image:secure_url' content={imageURL} />
+        <meta property='og:image:secure' content={imageURL} />
+        <meta property='og:url' content={canonicalURL} />
+        <meta property='og:image' content={imageURL} />
         <link rel='canonical' href={canonicalURL} />
       </Head>
       <>
