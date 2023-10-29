@@ -10,17 +10,24 @@ export default function Home() {
     'title=' +
     encodeURIComponent('Lens Protocol') +
     '&description=' +
-    encodeURIComponent(
-      'Empowering individuals while fostering transparency through blockchain technology'
-    );
+    encodeURIComponent('Web-3 Social Layer Solution');
+
+  const canonicalURL = `${process.env.NEXT_PUBLIC_BASE_URL}/home`;
+
   const [loading, setLoading] = useState(false);
   return (
     <HeroAnimation>
-      <Head key={'main'}>
+      <Head>
         <meta property='og:image' content={imageURL} />
         <meta property='og:image:secure_url' content={imageURL} />
         <meta property='og:image:secure' content={imageURL} />
+        <meta property='og:image:width' content='250' />
+        <meta property='og:image:height' content='250' />
+        <meta property='og:image' content={imageURL} />
+        <meta property='og:type' content='product' />
         <meta name='twitter:image' content={imageURL} />
+        <meta name='twitter:card' content={imageURL} />
+        <link rel='canonical' href={canonicalURL} />
       </Head>
       <div className='flex flex-auto justify-center items-center w-full'>
         <section className='px-2 md:px-0'>

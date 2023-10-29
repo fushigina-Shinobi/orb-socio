@@ -19,19 +19,16 @@ export default function SingleProfile({ profile, publications, handle }) {
 
   const canonicalURL = `${process.env.NEXT_PUBLIC_BASE_URL}/profile/${handle}`;
 
-  console.log('profile', profile?.coverPicture?.original?.url);
-
   return (
     <div className='flex flex-auto flex-col bg-mainBg'>
       <Head>
         <meta property='og:image' content={imageURL} />
-        {/* <meta property='og:image:secure_url' content={imageURL} />
-        <meta property='og:image:secure' content={imageURL} /> */}
+        <meta property='og:image:secure_url' content={imageURL} />
+        <meta property='og:image:secure' content={imageURL} />
         <meta property='og:image:width' content='1200' />
         <meta property='og:image:height' content='630' />
         <meta property='og:image' content={imageURL} />
-        <meta property='og:image:width' content='526' />
-        <meta property='og:image:height' content='275' />
+        <meta property='og:type' content='profile' />
         <meta name='twitter:image' content={imageURL} />
         <meta name='twitter:card' content={imageURL} />
         <link rel='canonical' href={canonicalURL} />

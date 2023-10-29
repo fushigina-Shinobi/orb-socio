@@ -32,7 +32,7 @@ export default function Layout({ children, hideLayout }) {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [pathname]);
 
   if (hideLayout) {
     return children;
@@ -131,7 +131,6 @@ export default function Layout({ children, hideLayout }) {
           </div>
         </div>
       )}
-
       <Header />
       <div className='flex flex-auto'>{children}</div>
     </div>

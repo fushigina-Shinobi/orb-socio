@@ -1,4 +1,3 @@
-// import getInitialName from '@/utils/getInitialName';
 import { ImageResponse } from '@vercel/og';
 
 export const config = {
@@ -8,38 +7,36 @@ export const config = {
 export default function handler(req) {
   try {
     const { searchParams } = req.nextUrl;
-    const title = searchParams.get('title') || 'No title';
-    // const logo = searchParams.get('logo') || 'Logo missing';
-    const description = searchParams.get('description');
+    const title = searchParams.get('title') || 'Lens Protocol';
+    const description =
+      searchParams.get('description') || 'Web-3 Social Layer Solution';
 
     return new ImageResponse(
       (
-        <div tw='w-full h-full flex flex-col justify-end items-stretch justify-end bg-white'>
-          <p tw='text-2xl'>{title}</p>
-          <div tw='flex justify-center items-center text-gray-500'>
-            {description ?? 'Data Not Found'}
-          </div>
-          {/* <div tw='mx-20 flex gap-x-10 bg-white'>
-            {logo ? (
-              <img
-                src={logo}
-                alt={title}
-                tw='-mt-28 h-60 w-60 rounded-full border-2'
-                width='1200'
-                height='75'
-                style={{ objectFit: 'cover', objectPosition: 'center' }}
-              />
-            ) : (
-              <div tw='-mt-24 h-36 w-36 rounded-full border-2 bg-primary relative'>
-                <h3 tw='text-tertiary absolute top-11 left-14 text-5xl'>
-                  {getInitialName(title)}
-                </h3>
+        <div tw='flex flex-col w-full h-full items-center justify-center bg-white'>
+          <div tw='bg-gray-50 flex w-full'>
+            <div tw='flex flex-col md:flex-row w-full py-12 px-4 md:items-center justify-between p-8'>
+              <h2 tw='flex flex-col text-xl sm:text-4xl font-bold tracking-tight text-gray-900 text-left'>
+                <span tw='text-[#884F5D] font-medium'>{title}</span>
+                <span tw='text-[#C58E96]'>{description}</span>
+              </h2>
+              <div tw='mt-8 flex md:mt-0'>
+                <div tw='flex rounded-md shadow'>
+                  <a tw='flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-1 py-1 text-xs font-medium text-white'>
+                    Get started
+                  </a>
+                </div>
+                <div tw='ml-3 flex rounded-md shadow'>
+                  <a tw='flex items-center justify-center rounded-md border border-transparent bg-white px-2 py-1 text-xs font-medium text-indigo-600'>
+                    Learn more
+                  </a>
+                </div>
               </div>
-            )}
-          </div> */}
+            </div>
+          </div>
         </div>
       ),
-      { width: 1200, height: 628 }
+      { width: 250, height: 250 }
     );
   } catch (error) {
     console.log(`${error.message}`);
